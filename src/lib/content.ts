@@ -12,11 +12,6 @@ export const nav = [
   { href: "#contato", label: "Contato" },
 ];
 
-export const clients = [
-  { id: "frederick", name: "Frederick Tattoo", mark: "F" },
-  { id: "lbsplay", name: "LBS Play", mark: "L" },
-];
-
 export const stats = [
   { value: 2, suffix: "", label: "no ar" },
   { value: 4, suffix: "+", label: "anos" },

@@ -1,8 +1,6 @@
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
-import { HoverClients } from "@/components/hover-clients";
-import { NameStrip } from "@/components/name-strip";
 import { SelectedWork } from "@/components/selected-work";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -16,8 +14,6 @@ export default function Home() {
       <SiteHeader />
       <main className="relative z-10 flex-1">
         <Hero />
-        <NameStrip />
-        <HoverClients />
         <SelectedWork />
         <About />
         <Contact />

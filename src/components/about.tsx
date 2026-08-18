@@ -1,6 +1,5 @@
 "use client";
 
-import { Highlighter } from "@/components/ui/highlighter";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { stats } from "@/lib/content";
 
@@ -16,10 +15,7 @@ export function About() {
         </div>
         <div>
           <p className="text-lg leading-relaxed md:text-xl">
-            Paiva. Layout, formulário, mobile.{" "}
-            <Highlighter action="highlight" color="#e8c48a" isView>
-              Frederick Tattoo e LBS Play
-            </Highlighter>{" "}
+            Paiva. Layout, formulário, mobile. Frederick Tattoo e LBS Play
             estão no ar.
           </p>
           <dl className="mt-12 grid grid-cols-2 gap-4 border-t border-line pt-8">
