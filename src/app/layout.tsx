@@ -34,6 +34,14 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon",
+  },
   twitter: {
     card: "summary_large_image",
     title: "Paiva — Frontend",
