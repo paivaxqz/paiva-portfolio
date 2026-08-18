@@ -24,6 +24,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://paiva.lat"),
   title: "Paiva",
   description: "Paiva. Frontend. Frederick Tattoo e LBS Play.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   openGraph: {
     title: "Paiva",
     description: "Paiva. Frontend. Frederick Tattoo e LBS Play.",
