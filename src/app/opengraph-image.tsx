@@ -51,7 +51,7 @@ export default function OpenGraphImage() {
               fontStyle: "italic",
             }}
           >
-            Frontend com opinião.
+            Frontend.
           </div>
         </div>
         <div

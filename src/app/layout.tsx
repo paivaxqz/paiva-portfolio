@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://paiva.lat"),
   title: "Paiva — Frontend",
   description:
-    "Paiva. Frontend. Interfaces para produtos que as pessoas usam de verdade.",
+    "Paiva. Frontend. Site do Frederick Tattoo.",
   openGraph: {
     title: "Paiva — Frontend",
     description:
-      "Paiva. Frontend. Interfaces para produtos que as pessoas usam de verdade.",
+      "Paiva. Frontend. Site do Frederick Tattoo.",
     url: "https://paiva.lat",
     siteName: "Paiva",
     locale: "pt_BR",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Paiva — Frontend",
     description:
-      "Paiva. Frontend. Interfaces para produtos que as pessoas usam de verdade.",
+      "Paiva. Frontend. Site do Frederick Tattoo.",
   },
 };
 

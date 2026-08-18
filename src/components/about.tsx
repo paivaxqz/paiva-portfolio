@@ -1,6 +1,5 @@
 "use client";
 
-import { Highlighter } from "@/components/ui/highlighter";
 import { NumberTicker } from "@/components/ui/number-ticker";
 import { stats } from "@/lib/content";
 
@@ -16,18 +15,8 @@ export function About() {
         </div>
         <div>
           <p className="text-lg leading-relaxed md:text-xl">
-            Me chamo Paiva. Trabalho no frontend — do layout até o estado
-            chato: loading, erro, vazio, mobile com polegar grosso. Prefiro um
-            produto{" "}
-            <Highlighter action="highlight" color="#e8c48a" isView>
-              claro e rápido
-            </Highlighter>{" "}
-            a uma página que só funciona no Figma.
-          </p>
-          <p className="mt-6 leading-relaxed text-muted">
-            Começo pelo conteúdo e pela tipografia. Cor vem depois. Animação só
-            se explica o que está acontecendo. Se o cliente não sabe o que o
-            botão faz, o site ainda não está pronto.
+            Paiva. Faço frontend — layout, formulário, mobile. O Frederick é o
+            que está no ar agora.
           </p>
           <dl className="mt-12 grid grid-cols-3 gap-4 border-t border-line pt-8">
             {stats.map((item) => (
