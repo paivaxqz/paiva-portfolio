@@ -1,92 +1,108 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { projects } from "@/lib/content";
 
 export function WorkIndex() {
   const [hoverId, setHoverId] = useState<string | null>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const paneRef = useRef<HTMLDivElement>(null);
   const active = projects.find((p) => p.id === hoverId) ?? null;
+
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+
+    const onWheel = (event: WheelEvent) => {
+      const pane = paneRef.current;
+      if (!pane || !hoverId) return;
+
+      const max = pane.scrollHeight - pane.clientHeight;
+      if (max <= 1) return;
+
+      const next = pane.scrollTop + event.deltaY;
+      if ((next <= 0 && event.deltaY < 0) || (next >= max && event.deltaY > 0)) {
+        return;
+      }
+
+      event.preventDefault();
+      pane.scrollTop = next;
+    };
+
+    root.addEventListener("wheel", onWheel, { passive: false });
+    return () => root.removeEventListener("wheel", onWheel);
+  }, [hoverId]);
+
+  useEffect(() => {
+    paneRef.current?.scrollTo({ top: 0 });
+  }, [hoverId]);
 
   return (
     <div
-      className="relative flex flex-col lg:grid lg:grid-cols-2 lg:items-start"
+      ref={rootRef}
+      className="relative"
       onMouseLeave={() => setHoverId(null)}
     >
       <div
-        className={`order-2 px-5 py-4 lg:sticky lg:top-24 lg:order-1 lg:px-8 ${
-          active ? "block" : "hidden lg:block lg:opacity-0"
+        className={`absolute top-4 left-5 z-20 hidden w-[min(22rem,36vw)] lg:block ${
+          active ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
-        {active ? (
-          <div className="overflow-hidden rounded-2xl border border-line bg-[#e4dfd3] shadow-xl">
-            <div className="flex items-center gap-2 px-3 py-2">
-              <div className="flex gap-1.5" aria-hidden>
-                <span className="size-2 rounded-full bg-[#d0c9bb]" />
-                <span className="size-2 rounded-full bg-[#d0c9bb]" />
-                <span className="size-2 rounded-full bg-[#d0c9bb]" />
-              </div>
-              <p className="min-w-0 flex-1 truncate rounded-md bg-white/70 px-2 py-1 font-mono text-[10px] text-muted">
-                {active.liveUrl}
-              </p>
-              <a
-                href={active.href}
-                target="_blank"
-                rel="noreferrer"
-                className="shrink-0 font-mono text-[10px] text-ink underline"
-              >
-                Abrir
-              </a>
-            </div>
-            <div className="relative h-[min(62vh,540px)] bg-[#111]">
+        <div className="overflow-hidden rounded-2xl border border-line bg-paper shadow-[0_20px_50px_-20px_rgb(28_25_21/0.4)]">
+          <div
+            ref={paneRef}
+            className="max-h-[72vh] overflow-y-auto overscroll-contain [scrollbar-width:thin]"
+          >
+            {active ? (
               <img
                 src={active.image}
                 alt=""
-                className="pointer-events-none absolute inset-0 h-full w-full object-cover object-top opacity-30"
+                width={720}
+                height={2400}
+                className="block h-auto w-full"
+                decoding="async"
               />
-              <iframe
-                key={active.id}
-                title={active.title}
-                src={active.href}
-                className="relative z-[1] h-full w-full border-0 bg-[#111]"
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
+            ) : null}
           </div>
-        ) : null}
+        </div>
       </div>
 
-      <ul className="order-1 lg:order-2">
-        {projects.map((project, i) => {
-          const on = hoverId === project.id;
-          return (
-            <li key={project.id}>
-              <button
-                type="button"
-                className="group relative flex w-full items-center justify-end gap-4 border-b border-line px-5 py-7 text-left md:px-8 md:py-8"
-                onMouseEnter={() => setHoverId(project.id)}
-                onFocus={() => setHoverId(project.id)}
-                onClick={() => setHoverId(project.id)}
-              >
-                <span className="absolute inset-x-0 top-0 h-0 bg-ink/6 transition-[height] duration-300 ease-out group-hover:h-full" />
-                <span className="relative font-mono text-[11px] tracking-[0.18em] text-muted">
-                  0{i + 1}
-                </span>
-                <span
-                  className={`relative flex-1 text-right font-serif text-4xl leading-none tracking-tight md:text-6xl ${
-                    on ? "text-rust" : ""
-                  }`}
-                >
-                  {project.title}
-                </span>
-                <span className="relative hidden max-w-[40%] truncate font-mono text-[11px] tracking-[0.16em] text-muted uppercase sm:block">
-                  {project.liveUrl}
-                </span>
-              </button>
-            </li>
-          );
-        })}
+      <ul>
+        {projects.map((project, i) => (
+          <li key={project.id}>
+            <button
+              type="button"
+              className="group relative flex w-full items-end justify-between gap-4 border-b border-line px-5 py-7 text-left md:px-8 md:py-9 lg:pl-[min(26rem,40vw)]"
+              onMouseEnter={() => setHoverId(project.id)}
+              onFocus={() => setHoverId(project.id)}
+            >
+              <span className="font-mono text-[11px] tracking-[0.18em] text-muted">
+                0{i + 1}
+              </span>
+              <span className="flex-1 font-serif text-4xl leading-none tracking-tight transition-colors duration-200 group-hover:text-rust md:text-6xl">
+                {project.title}
+              </span>
+              <span className="hidden font-mono text-[11px] tracking-[0.16em] text-muted uppercase sm:block">
+                {project.liveUrl}
+              </span>
+            </button>
+            {hoverId === project.id ? (
+              <div className="border-b border-line px-5 py-4 lg:hidden">
+                <div className="max-h-[70vh] overflow-y-auto overscroll-contain rounded-xl border border-line [scrollbar-width:thin]">
+                  <img
+                    src={project.image}
+                    alt=""
+                    width={720}
+                    height={2400}
+                    className="block h-auto w-full"
+                    decoding="async"
+                  />
+                </div>
+              </div>
+            ) : null}
+          </li>
+        ))}
       </ul>
     </div>
   );

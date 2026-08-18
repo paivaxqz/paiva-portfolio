@@ -15,7 +15,7 @@ export function Hero() {
           <LineShadowText>{site.name}</LineShadowText>
         </h1>
         <p className="mt-8 max-w-xl text-xl leading-snug text-ink/90 md:text-2xl">
-          Frontend. Passa o mouse no trabalho e rola o site aí dentro.
+          Frontend.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a href="#trabalho">
