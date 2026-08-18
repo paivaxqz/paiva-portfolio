@@ -38,7 +38,7 @@ export const projects: Project[] = [
       "Site do Frederick, tatuador em Vila Isabel. Old school e blackwork. Agenda no Zap.",
     href: "https://fredericktatto.vercel.app/",
     liveUrl: "fredericktatto.vercel.app",
-    image: "/work/frederick-full.jpg",
+    image: "/work/frederick-tatto.jpg",
   },
   {
     id: "lbsplay",
@@ -49,6 +49,6 @@ export const projects: Project[] = [
       "Loja de assinatura de streaming. PIX, entrega na hora. Netflix, Disney+, combos.",
     href: "https://lbsplay.shop/",
     liveUrl: "lbsplay.shop",
-    image: "/work/lbsplay-full.jpg",
+    image: "/work/lbsplay.jpg",
   },
 ];
