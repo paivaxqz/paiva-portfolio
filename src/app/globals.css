@@ -26,6 +26,8 @@
   --animate-marquee: marquee var(--duration) linear infinite;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   --animate-shiny-text: shiny-text 8s infinite;
+  --animate-line-shadow: line-shadow 15s linear infinite;
+  --animate-shine: shine var(--duration) infinite linear;
 }
 
 @keyframes marquee {
@@ -55,6 +57,27 @@
   30%,
   60% {
     background-position: calc(100% + var(--shiny-width)) 0;
+  }
+}
+
+@keyframes line-shadow {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% -100%;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
   }
 }
 

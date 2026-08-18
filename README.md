@@ -1,6 +1,6 @@
 # paiva-portfolio
 
-Site de Paiva — frontend. Produção: [paiva.lat](https://paiva.lat).
+Site de Paiva, frontend. Produção: [paiva.lat](https://paiva.lat).
 
 ```bash
 npm install

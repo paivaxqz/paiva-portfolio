@@ -22,13 +22,13 @@ const instrument = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://paiva.lat"),
-  title: "Paiva — Frontend",
+  title: "Paiva, frontend",
   description:
-    "Paiva. Frontend. Site do Frederick Tattoo.",
+    "Paiva. Frontend. Frederick Tattoo e LBS Play.",
   openGraph: {
-    title: "Paiva — Frontend",
+    title: "Paiva, frontend",
     description:
-      "Paiva. Frontend. Site do Frederick Tattoo.",
+      "Paiva. Frontend. Frederick Tattoo e LBS Play.",
     url: "https://paiva.lat",
     siteName: "Paiva",
     locale: "pt_BR",
@@ -44,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paiva — Frontend",
+    title: "Paiva, frontend",
     description:
-      "Paiva. Frontend. Site do Frederick Tattoo.",
+      "Paiva. Frontend. Frederick Tattoo e LBS Play.",
   },
 };
 

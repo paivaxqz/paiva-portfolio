@@ -12,46 +12,48 @@ export const nav = [
   { href: "#contato", label: "Contato" },
 ];
 
-export const stack = [
-  "React",
-  "Next.js",
-  "TypeScript",
-  "Tailwind",
-  "Node",
-  "Figma",
-  "Vite",
-  "PostgreSQL",
+export const clients = [
+  { id: "frederick", name: "Frederick Tattoo", mark: "F" },
+  { id: "lbsplay", name: "LBS Play", mark: "L" },
 ];
 
 export const stats = [
+  { value: 2, suffix: "", label: "no ar" },
   { value: 4, suffix: "+", label: "anos" },
-  { value: 18, suffix: "", label: "projetos" },
-  { value: 12, suffix: "", label: "no ar" },
 ];
 
 export type Project = {
+  id: string;
   year: string;
   title: string;
   kind: string;
   summary: string;
-  stack: string[];
   href: string;
-  accent: string;
-  liveUrl?: string;
-  image?: string;
+  liveUrl: string;
+  image: string;
 };
 
 export const projects: Project[] = [
   {
+    id: "frederick",
     year: "2026",
     title: "Frederick Tattoo",
     kind: "Cliente",
     summary:
       "Site do Frederick, tatuador em Vila Isabel. Old school e blackwork. Agenda no Zap.",
-    stack: ["Next.js"],
     href: "https://fredericktatto.vercel.app/",
     liveUrl: "fredericktatto.vercel.app",
     image: "/work/frederick-tatto.jpg",
-    accent: "#1c1915",
+  },
+  {
+    id: "lbsplay",
+    year: "2026",
+    title: "LBS Play",
+    kind: "Cliente",
+    summary:
+      "Loja de assinatura de streaming. PIX, entrega na hora. Netflix, Disney+, combos.",
+    href: "https://lbsplay.shop/",
+    liveUrl: "lbsplay.shop",
+    image: "/work/lbsplay.jpg",
   },
 ];
