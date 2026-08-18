@@ -1,20 +1,17 @@
 import { About } from "@/components/about";
 import { Contact } from "@/components/contact";
 import { Hero } from "@/components/hero";
-import { SelectedWork } from "@/components/selected-work";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { Work } from "@/components/work";
 
 export default function Home() {
   return (
-    <div className="relative flex min-h-full flex-col">
-      <div className="grain" />
-      <ScrollProgress />
+    <div className="flex min-h-full flex-col">
       <SiteHeader />
-      <main className="relative z-10 flex-1">
+      <main className="flex-1">
         <Hero />
-        <SelectedWork />
+        <Work />
         <About />
         <Contact />
       </main>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Fraunces, Geist, Geist_Mono } from "next/font/google";
 
 import "./globals.css";
 
@@ -13,22 +13,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const instrument = Instrument_Serif({
-  variable: "--font-instrument",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["300", "400", "600"],
   style: ["normal", "italic"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://paiva.lat"),
-  title: "Paiva, frontend",
-  description:
-    "Paiva. Frontend. Frederick Tattoo e LBS Play.",
+  title: "Paiva",
+  description: "Paiva. Frontend. Frederick Tattoo e LBS Play.",
   openGraph: {
-    title: "Paiva, frontend",
-    description:
-      "Paiva. Frontend. Frederick Tattoo e LBS Play.",
+    title: "Paiva",
+    description: "Paiva. Frontend. Frederick Tattoo e LBS Play.",
     url: "https://paiva.lat",
     siteName: "Paiva",
     locale: "pt_BR",
@@ -44,9 +42,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Paiva, frontend",
-    description:
-      "Paiva. Frontend. Frederick Tattoo e LBS Play.",
+    title: "Paiva",
+    description: "Paiva. Frontend. Frederick Tattoo e LBS Play.",
   },
 };
 
@@ -54,7 +51,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} ${instrument.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-paper font-sans text-ink antialiased">
         {children}
