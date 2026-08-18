@@ -37,16 +37,30 @@ export const stats = [
   { value: 12, suffix: "", label: "produtos em produção" },
 ];
 
-export const projects = [
+export type Project = {
+  year: string;
+  title: string;
+  kind: string;
+  summary: string;
+  stack: string[];
+  href: string;
+  accent: string;
+  liveUrl?: string;
+  image?: string;
+};
+
+export const projects: Project[] = [
   {
     year: "2026",
-    title: "Balcão",
-    kind: "Comércio local",
+    title: "Frederick Tattoo",
+    kind: "Site do cliente",
     summary:
-      "Catálogo, carrinho e checkout para um mercado de bairro. O objetivo era o caixa digital não travar na hora do pico — não um e-commerce genérico.",
-    stack: ["Next.js", "Stripe", "Postgres"],
-    href: "#contato",
-    accent: "#c45c26",
+      "Estúdio em Vila Isabel, RJ. Old school e blackwork — preto que segura o traço. Flash no Instagram, agenda no Zap. Site no ar.",
+    stack: ["Next.js", "Vercel"],
+    href: "https://fredericktatto.vercel.app/",
+    liveUrl: "fredericktatto.vercel.app",
+    image: "/work/frederick-tatto.jpg",
+    accent: "#1c1915",
   },
   {
     year: "2025",
