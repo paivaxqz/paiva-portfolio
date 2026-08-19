@@ -1,10 +1,9 @@
-# paiva-portfolio
+# paiva.lat
 
-Site de Paiva, frontend. Produção: [paiva.lat](https://paiva.lat).
+Portfólio estático (Vite + Workers). Live: https://www.paiva.lat/
 
 ```bash
-npm install
+npm i
 npm run dev
+npm run deploy
 ```
-
-Push em `main` dispara deploy Cloudflare Workers (`npm run deploy`).

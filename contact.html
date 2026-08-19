@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Contact — Paiva</title>
+    <meta name="description" content="Fala com o Paiva. Site, loja, estúdio." />
+    <meta name="theme-color" content="#1c1d20" />
+    <link rel="icon" href="/media/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/media/logo.png" />
+    <meta property="og:title" content="Contact — Paiva" />
+    <meta property="og:description" content="Manda o que já existe e o que precisa." />
+    <meta property="og:image" content="https://www.paiva.lat/media/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap" />
+    <link rel="stylesheet" href="/css/app.css" />
+  </head>
+  <body data-barba="wrapper">
+    <div class="loading-screen">
+      <div class="loading-words">
+        <h2>Home</h2>
+        <h2>Work</h2>
+        <h2>About</h2>
+        <h2 class="active">Contact</h2>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="brand" href="/" aria-label="Paiva">
+        <img src="/media/logo.svg" alt="" />
+        <span>Paiva</span>
+      </a>
+      <div class="nav-links">
+        <a href="/work.html">Work</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <button class="menu-btn" type="button">Menu</button>
+    </nav>
+    <div class="nav-overlay">
+      <a href="/">Home</a>
+      <a href="/work.html">Work</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+    </div>
+    <main data-barba="container" data-barba-namespace="contact">
+      <section class="case-hero">
+        <p class="label once-in">Contact</p>
+        <h1 class="huge once-in">Bora falar</h1>
+      </section>
+      <section class="section">
+        <form class="form fade-in" action="mailto:paiva@local" method="post" enctype="text/plain">
+          <input name="nome" placeholder="Nome" required />
+          <input name="email" type="email" placeholder="E-mail" required />
+          <textarea name="msg" placeholder="O projeto"></textarea>
+          <p><button class="btn magnetic" data-strength="14" type="submit">Enviar</button></p>
+        </form>
+        <p class="social" style="margin-top: 2rem">
+          <span class="label">Ou pelo GitHub</span><br />
+          <a href="https://github.com/paivaxqz" target="_blank" rel="noreferrer">github.com/paivaxqz</a>
+        </p>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

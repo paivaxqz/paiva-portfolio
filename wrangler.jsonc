@@ -1,19 +1,13 @@
 {
-  "$schema": "./node_modules/wrangler/config-schema.json",
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "paiva-portfolio",
-  "main": ".open-next/worker.js",
-  "compatibility_date": "2026-08-17",
-  "compatibility_flags": ["nodejs_compat"],
-  "workers_dev": true,
-  "observability": {
-    "enabled": true
-  },
+  "compatibility_date": "2026-08-18",
   "assets": {
-    "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "directory": "./dist"
   },
   "routes": [
     { "pattern": "paiva.lat", "custom_domain": true },
     { "pattern": "www.paiva.lat", "custom_domain": true }
-  ]
+  ],
+  "observability": { "enabled": true }
 }
